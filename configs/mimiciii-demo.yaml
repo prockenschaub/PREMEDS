@@ -1,0 +1,109 @@
+
+name: "mimic_demo"
+version: "1.4"
+url: "https://physionet.org/files/mimiciii-demo/1.4"
+ids:
+  patient:
+    col: "subject_id"
+    start: "dob"
+    end: "dod"
+    tbl: "patients"
+  hadm:
+    col: "hadm_id"
+    start: "admittime"
+    end: "dischtime"
+    tbl: "admissions"
+  icustay:
+    col: "icustay_id"
+    start: "intime"
+    end: "outtime"
+    tbl: "icustays"
+tbls:
+  admissions:
+    files: "ADMISSIONS"
+    cols: 
+      row_id:
+        type: "Int32"
+      subject_id: 
+        type: "Int32"
+      hadm_id: 
+        type: "Int32"
+      admittime: 
+        type: "Datetime"
+      dischtime: 
+        type: "Datetime"
+      deathtime:
+        type: "Datetime"
+      admission_type:
+        type: "String"
+      admission_location:
+        type: "String"
+      discharge_location: 
+        type: "String"
+      insurance: 
+        type: "String"
+      language:
+        type: "String"
+      religion:
+        type: "String"
+      marital_status: 
+        type: "String"
+      ethnicity: 
+        type: "String"
+      edregtime:
+        type: "Datetime"
+      edouttime: 
+        type: "Datetime"
+      diagnosis: 
+        type: "String"
+      hospital_expire_flag: 
+        type: "Int32"
+      has_chartevents_data: 
+        type: "Int16"
+  icustays: 
+    files: "ICUSTAYS"
+    cols: 
+      row_id:
+        type: "Int32"
+      subject_id:
+        type: "Int32"
+      hadm_id: 
+        type: "Int32"
+      icustay_id:
+        type: "Int32"
+      dbsource: 
+        type: "String"
+      first_careunit:
+        type: "String"
+      last_careunit: 
+        type: "String"
+      first_wardid:
+        type: "Int32"
+      last_wardid:
+        type: "Int32"
+      intime: 
+        type: "Datetime"
+      outtime: 
+        type: "Datetime"
+      los: 
+        type: "Float32"
+  patients:
+    files: "PATIENTS"
+    cols: 
+      row_id:
+        type: "Int32"
+      subject_id: 
+        type: "Int32"
+      gender: 
+        type: "String"
+      dob: 
+        type: "Datetime"
+      dod: 
+        type: "Datetime"
+      dod_hosp: 
+        type: "Datetime"
+      dod_ssn:
+        type: "Datetime"
+      expire_flag:
+        type: "Int8"
+  
